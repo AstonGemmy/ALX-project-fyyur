@@ -191,6 +191,13 @@ h2.monospace {
   height: 325px;
   margin-bottom: 15px;
 }
+.tile.recently-listed {
+  text-align: center;
+  padding: 15px 25px;
+  border: solid 1px #ebebeb;
+  height: 260px;
+  margin-bottom: 15px;
+}
 .tile img {
   max-height: 200px;
 }

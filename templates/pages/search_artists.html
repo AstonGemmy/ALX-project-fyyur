@@ -2,6 +2,7 @@
 {% block title %}Fyyur | Artists Search{% endblock %}
 {% block content %}
 <h3>Number of search results for "{{ search_term }}": {{ results.count }}</h3>
+{% if results.data %}
 <ul class="items">
 	{% for artist in results.data %}
 	<li>
@@ -14,4 +15,16 @@
 	</li>
 	{% endfor %}
 </ul>
+{% else %}
+<ul class="list-unstyled">
+	<li>
+		<h4><i class="fas fa-users"></i> No matching artists found!</h4>
+		<a href="/artists/create">
+			<div class="item">
+				<h5>Post an artist.</h5>
+			</div>
+		</a>
+	</li>
+</ul>
+{% endif %}
 {% endblock %}

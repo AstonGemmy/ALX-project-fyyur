@@ -22,4 +22,46 @@
 		<img id="front-splash" src="{{ url_for('static',filename='img/front-splash.jpg') }}" alt="Front Photo of Musical Band" />
 	</div>
 </div>
+
+<!-- Implementing recently listed artists -->
+<section>
+	<h2 class="monospace">Recently listed Artists</h2>
+	<div class="row">
+		{% if data.artists|length > 0 %}
+		{% for artist in data.artists %}
+		<div class="col-sm-4">
+			<div class="tile tile-show recently-listed">
+				<img src="{{ artist.image_link }}" alt="Artist Image" />
+				<h5><a href="/artists/{{ artist.id }}">{{ artist.name }}</a></h5>
+			</div>
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="col-sm-12">
+			<h5>No recently listed artists!<a href="/artists/create"> List an artist here!</a></h5>
+		</div>
+		{% endif %}
+	</div>
+</section>
+
+<!-- Implementing recently listed venues -->
+<section>
+	<h2 class="monospace">Recently listed Venues</h2>
+	<div class="row">
+		{% if data.venues|length > 0 %}
+		{% for venue in data.venues %}
+		<div class="col-sm-4">
+			<div class="tile tile-show recently-listed">
+				<img src="{{ venue.image_link }}" alt="Venue Image" />
+				<h5><a href="/venues/{{ venue.id }}">{{ venue.name }}</a></h5>
+			</div>
+		</div>
+		{% endfor %}
+		{% else %}
+		<div class="col-sm-12">
+			<h5>No recently listed venues!<a href="/venues/create"> List a venue here!</a></h5>
+		</div>
+		{% endif %}
+	</div>
+</section>
 {% endblock %}

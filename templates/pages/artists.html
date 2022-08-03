@@ -1,6 +1,7 @@
 {% extends 'layouts/main.html' %}
 {% block title %}Fyyur | Artists{% endblock %}
 {% block content %}
+{% if artists %}
 <ul class="items">
 	{% for artist in artists %}
 	<li>
@@ -13,4 +14,16 @@
 	</li>
 	{% endfor %}
 </ul>
+{% else %}
+<ul class="list-unstyled">
+	<li>
+		<h2><i class="fas fa-users"></i> No artists yet!</h2>
+		<a href="/artists/create">
+			<div class="item">
+				<h5>Be the first to post an artist.</h5>
+			</div>
+		</a>
+	</li>
+</ul>
+{% endif %}
 {% endblock %}
