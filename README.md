@@ -34,6 +34,15 @@ pip install postgres
 pip install Flask
 pip install Flask-Migrate
 ```
+
+##  Note: Additional dependencies included to requirements.txt
+```
+WTForms-Components
+WTForms-Alchemy
+phonenumbers
+SQLAlchemy-Utils
+```
+
 > **Note** - If we do not mention the specific version of a package, then the default latest stable package will be installed. 
 
 ### 2. Frontend Dependencies
